@@ -5,3 +5,8 @@ aws-cdk.aws_sns==1.134.0
 aws-cdk.aws_sns_subscriptions==1.134.0
 aws-cdk.aws_s3==1.134.0
 aws-cdk.assertions==1.134.0
+aws-cdk.aws_lambda
+aws-cdk.aws_apigateway
+aws-cdk.aws_dynamodb
+cdk-dynamo-table-view==0.1.139
+aws-cdk.aws_codecommit
