@@ -1,6 +1,21 @@
 
 # Welcome to your CDK Python project!
 
+## Feature 
+1. Simple API built using AWS CDK Python.
+2. Custom Construct feature of AWS CDK.
+3. Uses of Pre-Built Construct Libraries.
+4. Automated Testing and Validation of AWS CDK based Apps.
+5. CDK Pipeline for Deployment of Apps and Validation.
+## Architecture-
+### Basic App with CDK Construct
+![Alt text](images\hello-arch.png?raw=true "Basic App")
+### Basic App with Imported CDK Construct
+![Alt text](images\table-viewer.png?raw=true "Basic App")
+### CI/CD Pipeline for CDK App
+![Alt text](images\cdk-pipeline.JPG?raw=true "Basic App")
+![Alt text](images\cdk-pipeline-1.JPG?raw=true "Basic App")
+
 You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`awscdk_workshop_stack`)
 which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
 
@@ -47,6 +62,7 @@ You can now begin exploring the source code, contained in the hello directory.
 There is also a very trivial test included that can be run like this:
 
 ```
+$ pip install -r requirements-dev.txt
 $ pytest
 ```
 
@@ -64,5 +80,6 @@ See [this useful workshop](https://cdkworkshop.com/30-python.html) on working wi
  * `cdk deploy`      deploy this stack to your default AWS account/region
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
+
 
 Enjoy!
