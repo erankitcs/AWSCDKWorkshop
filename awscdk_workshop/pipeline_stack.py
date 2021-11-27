@@ -53,6 +53,7 @@ class WorkshopPipelineStack(core.Stack):
             commands = ['curl -Ssf $ENDPOINT_URL']
         ))
         deploy_stage.add_actions(pipelines.ShellScriptAction(
+            action_name='TestAPIGatewayEndpoint',
             use_outputs={
                 'ENDPOINT_URL': pipeline.stack_output(deploy.hc_endpoint)
             },
