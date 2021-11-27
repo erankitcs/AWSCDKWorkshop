@@ -9,12 +9,12 @@
 5. CDK Pipeline for Deployment of Apps and Validation.
 ## Architecture-
 ### Basic App with CDK Construct
-![Alt text](images\hello-arch.png?raw=true "Basic App")
+![Alt text](images/hello-arch.png?raw=true "Basic App")
 ### Basic App with Imported CDK Construct
-![Alt text](images\table-viewer.png?raw=true "Basic App")
+![Alt text](images/table-viewer.png?raw=true "Basic App")
 ### CI/CD Pipeline for CDK App
-![Alt text](images\cdk-pipeline.JPG?raw=true "Basic App")
-![Alt text](images\cdk-pipeline-1.JPG?raw=true "Basic App")
+![Alt text](images/cdk-pipeline.JPG?raw=true "Basic App")
+![Alt text](images/cdk-pipeline-1.JPG?raw=true "Basic App")
 
 You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`awscdk_workshop_stack`)
 which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
