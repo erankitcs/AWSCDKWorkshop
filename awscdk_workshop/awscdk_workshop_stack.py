@@ -8,6 +8,13 @@ from .hitcounter import HitCounter
 from cdk_dynamo_table_view import TableViewer
 
 class AwscdkWorkshopStack(core.Stack):
+    @property
+    def hc_endpoint(self):
+        return self._hc_endpoint
+
+    @property
+    def hc_viewer_url(self):
+        return self._hc_viewer_url
 
     def __init__(self, scope: core.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -29,4 +36,13 @@ class AwscdkWorkshopStack(core.Stack):
             self, 'ViewHitCounter',
             table=hello_with_counter.table,
             title='HitCounterView'
+        )
+        self._hc_endpoint = core.CfnOutput(
+            self, 'GatewayUrl',
+            value = myapi.url
+        )
+
+        self._hc_viewer_url = core.CfnOutput(
+            self, 'TableViewerUrl',
+            value = table_view.endpoint
         )
