@@ -44,4 +44,21 @@ class WorkshopPipelineStack(core.Stack):
             )
         )
         deploy = WorkshopPipelineStage(self, 'Deploy')
-        pipeline.add_application_stage(deploy)
+        deploy_stage = pipeline.add_application_stage(deploy)
+        deploy_stage.add_actions(pipelines.ShellScriptAction(
+            action_name ='TestViewerEndpoint',
+            use_outputs = {
+                'ENDPOINT_URL': pipeline.stack_output(deploy.hc_viewer_url)
+            },
+            commands = ['curl -Ssf $ENDPOINT_URL']
+        ))
+        deploy_stage.add_actions(pipelines.ShellScriptAction(
+            use_outputs={
+                'ENDPOINT_URL': pipeline.stack_output(deploy.hc_endpoint)
+            },
+            commands=[
+                'curl -Ssf $ENDPOINT_URL',
+                'curl -Ssf $ENDPOINT_URL/hello',
+                'curl -Ssf $ENDPOINT_URL/test'
+            ]
+        ))
