@@ -1,0 +1,23 @@
+import setuptools
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="multi_region_s3_crr_kms_cmk_source",
+    version="0.0.1",
+    description="Multi region S3 CRR KMS CMK Source Construct",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    author="author",
+    package_dir={"": "lib"},
+    packages=setuptools.find_packages(where="multi_region_s3_crr_kms_cmk_source"),
+    install_requires=[
+        "aws-cdk.core==1.137.0",
+        "aws-cdk.aws-kms==1.137.0",
+        "aws-cdk.aws-s3==1.137.0",
+        "aws-cdk.aws-ssm==1.137.0",
+        "aws-cdk.aws-iam==1.137.0",
+        "aws-cdk.custom-resources==1.137.0"
+    ],
+)
